@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        background-color: rgb(32, 105, 151, 0.8);
+    }
+
+    .question-box {
+        background-color: rgb(255, 255, 255, 0.2);
+        padding: 2rem;
+        border-radius: 3rem;
+        margin-top: 3rem;
+    }
+
+    .question-box P {
+        font-size: 2rem;
+    }
+
+    .form-control {
+        height: 6vh;
+    }
+
+    .form-control:focus {
+        border-color:  #0b5ed7 !important;
+        box-shadow: 0 0 0 0.3rem rgb(95, 145, 175, ) !important;
+    }
+</style>
+
+<body>
+    <div class="container mt-5 text-center col-10 col-md-10 col-lg-5">
+        <h1 class="mb-4 text-white">Conditional Statement</h1>
+
+        <div class="question-box">
+            <h2>1. Delivery Company</h2>
+            <input type="text" class="form-control rounded-4" id="one" placeholder="Package Name">
+            <small id="valtext" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="oneBut()"
+                class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="show">The answer</span></p>
+
+        </div>
+
+        <div class="question-box">
+            <h2>2. School in Ado-Ekiti (Remove extra spaces)</h2>
+            <input type="text" class="form-control rounded-4" id="two" placeholder="Enter text with extra spaces">
+            <small id="valtext2" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="twoBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="showTwo">The answer</span></p>
+        </div>
+
+        <div class="question-box">
+            <h2>3. Grocery Store Even items discount</h2>
+            <input type="number" class="form-control rounded-4" id="three" placeholder="Enter number of items">
+            <span id="valtext3" class="p-0 m-0 text-danger"></span> <br>
+            <button onclick="threeBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+        </div>
+
+        <div class="question-box">
+            <h2>4. LAUTECH Weather Station</h2>
+            <input type="number" class="form-control rounded-4" id="four" placeholder="Enter temperature in °C">
+            <small id="valtext4" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="fourBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="showFour">The answer</span></p>
+        </div>
+
+        <div class="question-box">
+            <h2>5. SCI Clinic (BMI Calculation)</h2>
+            <input type="number" class="form-control mb-3 rounded-4" id="num1" placeholder="Weight (kg)">
+            <input type="number" class="form-control rounded-4" id="num2" placeholder="Height (m)">
+            <small id="valtext5" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="fiveBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="showFive">The answer</span></p>
+        </div>
+
+
+        <div class="question-box">
+            <h2>6. Gaming Account Username</h2>
+            <input type="text" class="form-control rounded-4" id="six"
+                placeholder="Letters, numbers, and underscores only">
+            <small id="valtext6" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="sixBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="showSix">The answer</span></p>
+        </div>
+
+        <div class="question-box">
+            <h2>7. Airline Luggage Weight</h2>
+            <input type="number" class="form-control rounded-4" id="seven" placeholder="Luggage weight (kg)">
+            <small id="valtext7" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="sevenBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="showSeven">The answer</span></p>
+        </div>
+
+        <div class="question-box">
+            <h2>8. OAU Email Validation</h2>
+            <input type="text" class="form-control rounded-4" id="eight" placeholder="xxxxxx@oauife.edu.ng">
+            <small id="valtext88" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="eightBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="show8">The answer</span></p>
+        </div>
+
+        <div class="question-box">
+            <h2>9. Grading System</h2>
+            <input type="number" class="form-control rounded-4" id="nine" placeholder="Input your score (0-100)">
+            <small id="valtext9" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="nineBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="show9">The answer</span></p>
+        </div>
+
+
+        <div class="question-box">
+            <h2>10. Supermarket Discount Price</h2>
+            <input type="number" class="form-control rounded-4" id="ten" placeholder="Input total price (₦)">
+            <small id="valtext10" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="tenBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Final Price: <span id="showTen">The answer</span></p>
+        </div>
+
+        <div class="question-box">
+            <h2>11. Course Qualification</h2>
+            <input type="number" class="form-control mb-3 rounded-4" placeholder="Enter JAMB score" id="score">
+            <input type="text" class="form-control" placeholder="Enter the course" id="course">
+            <small id="valtext11" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="elevenBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="showEleven">Result will appear here</span></p>
+        </div>
+
+
+        <div class="question-box">
+            <h2>12. Voting Eligibility</h2>
+            <input type="number" class="form-control rounded-4" placeholder="Enter your birth year (e.g., 2004)"
+                id="dob">
+            <small id="valtext12" class="p-0 m-0 text-danger"></small> <br>
+            <button onclick="twelveBut()" class="btn btn-primary col-6 col-sm-4 col-md-6 col-lg-4 p-2 rounded-5 fw-semibold fs-5">Verify</button>
+            <p class="mt-2 fw-medium">Result: <span id="showTwelve"></span></p>
+        </div>
+    </div>
+</body>
+<script src="script.js">
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+
+</html>
